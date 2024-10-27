@@ -34,3 +34,13 @@ function view($path, $attributes = [])
     extract($attributes);  // Extracts variables to local scope
     require base_path('views/' . $path); // Will load  /views/index.php
 }
+
+function redirect($path) {
+    header("location: $path");
+    exit();
+}
+
+function old($key, $default = '')
+{
+       return \core\Session::get('old')[$key] ?? $default;
+}

@@ -1,5 +1,7 @@
 <?php
 
+
+
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -35,14 +37,11 @@ if ($user) {
     // if no, save one to the database, and then log the user in, and redirect
     $db->query('insert into users (email, password) values (:email, :password)', [
         ':email' => $email,
-        ':password' => $password
+        ':password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
     // log the user in
-    $_SESSION['user'] = [
-        'email' => $email,
-//        'logged_in' => true
-    ];
+    login($user);
 
     // redirect to the home page
     header('Location: /');
