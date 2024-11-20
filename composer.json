@@ -1,0 +1,26 @@
+{
+    "name": "carlos/demo",
+    "authors": [
+        {
+            "name": "Carlos",
+            "email": "carloschinyuku@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/collections": "^11.33"
+    },
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/",
+            "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
